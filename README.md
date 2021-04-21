@@ -4,6 +4,10 @@
 
 > I developed several input plugins of github.com/influxdata/telegraf in 2020, now archived here. New ideas and bug reporting are welcome.
 
+> The framework has been modified little bit:
+* In input.go, added an interface named ServiceInputWithContext.
+* In agent/agent.go, modified functions startServiceInputs and stopServiceInputs to deal with the added ServiceInputWithContext interface.
+
 > Those plugins could be classified into 2 kinds:
 * modify original counter plugins to add speed rates to those counters by calculating the difference of interval.
 * create new plugins to provide developing frameworks in conditions of resource pools, such as querying oracle DBs or running bash scripts.
